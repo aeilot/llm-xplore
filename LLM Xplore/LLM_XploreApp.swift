@@ -12,7 +12,8 @@ import SwiftData
 struct LLM_XploreApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            ChatSession.self,
+            LanguageModel.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

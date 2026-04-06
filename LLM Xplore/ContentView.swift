@@ -10,19 +10,32 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query(sort: \ChatSession.updatedAt, order: .reverse) private var sessions: [ChatSession]
 
     var body: some View {
         NavigationViewWrapper {
             List {
-                ForEach(items) { item in
+                ForEach(sessions) { session in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text(session.title)
+                                .font(.headline)
+                            Text(session.lastMessagePreview ?? "No messages yet")
+                                .foregroundStyle(.secondary)
+                            Text(session.updatedAt, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                                .font(.caption)
+                                .foregroundStyle(.tertiary)
+                        }
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(session.title)
+                            Text(session.updatedAt, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteSessions)
             }
 #if os(macOS)
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
@@ -44,15 +57,15 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let newSession = ChatSession()
+            modelContext.insert(newSession)
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteSessions(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(sessions[index])
             }
         }
     }
@@ -76,5 +89,5 @@ fileprivate struct NavigationViewWrapper<Content: View>: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: [ChatSession.self, LanguageModel.self], inMemory: true)
 }
