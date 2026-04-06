@@ -1,0 +1,438 @@
+<style>
+  .app-frame {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    min-height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f7f8fb 0%, #eef1f6 100%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .sidebar {
+    background: linear-gradient(180deg, #122033 0%, #0f172a 100%);
+    color: #d6deed;
+    padding: 20px;
+  }
+
+  .sidebar .pill,
+  .right-rail .pill,
+  .overlay-pill,
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .sidebar .pill {
+    background: rgba(255,255,255,0.08);
+    color: #f8fafc;
+    margin-bottom: 14px;
+  }
+
+  .session-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .session-item {
+    padding: 12px 14px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 13px;
+  }
+
+  .session-item.active {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.16);
+  }
+
+  .main-pane {
+    padding: 22px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mock-select {
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: white;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #0f172a;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  }
+
+  .chat-area {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .bubble {
+    max-width: 78%;
+    padding: 14px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+  }
+
+  .bubble.user {
+    margin-left: auto;
+    background: #0f172a;
+    color: white;
+  }
+
+  .bubble.assistant {
+    background: white;
+    color: #0f172a;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .composer {
+    margin-top: auto;
+    padding: 16px;
+    border-radius: 22px;
+    background: white;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    display: grid;
+    gap: 12px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+  }
+
+  .composer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mock-input-area {
+    min-height: 64px;
+    border-radius: 16px;
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 14px;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  .right-rail {
+    padding: 20px;
+    background: rgba(255,255,255,0.65);
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+    display: grid;
+    align-content: start;
+    gap: 12px;
+  }
+
+  .info-card {
+    border-radius: 18px;
+    background: white;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 14px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .info-line {
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #dbe3ee 0%, #eef2f8 100%);
+  }
+
+  .stack-frame {
+    min-height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: radial-gradient(circle at top left, #eef4ff 0%, #f8fafc 40%, #edf2f7 100%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .hero-chat {
+    display: grid;
+    place-items: center;
+    padding: 12px 0 4px;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 620px;
+    border-radius: 26px;
+    background: rgba(255,255,255,0.84);
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.12);
+    padding: 26px;
+    display: grid;
+    gap: 18px;
+    backdrop-filter: blur(24px);
+  }
+
+  .mini-history {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    background: rgba(15, 23, 42, 0.06);
+    color: #334155;
+  }
+
+  .bottom-dock {
+    display: flex;
+    justify-content: center;
+  }
+
+  .dock {
+    display: inline-flex;
+    gap: 10px;
+    background: rgba(255,255,255,0.78);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 10px 12px;
+    border-radius: 18px;
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.09);
+  }
+
+  .dock .pill {
+    background: rgba(15, 23, 42, 0.06);
+    color: #0f172a;
+  }
+
+  .quick-ask {
+    max-width: 640px;
+    margin: 22px auto 0;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.88);
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: 0 30px 90px rgba(15, 23, 42, 0.24);
+    padding: 22px;
+    display: grid;
+    gap: 16px;
+    backdrop-filter: blur(30px);
+  }
+
+  .quick-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #334155;
+    font-size: 13px;
+  }
+
+  .overlay-pill {
+    background: rgba(15, 23, 42, 0.06);
+    color: #0f172a;
+  }
+
+  .quick-input {
+    min-height: 86px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 18px;
+    color: #475569;
+    font-size: 16px;
+  }
+
+  .shortcut {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 12px;
+    color: #475569;
+  }
+
+  .keycap {
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: white;
+    padding: 6px 10px;
+    font-weight: 600;
+    color: #0f172a;
+  }
+</style>
+
+<h2>UI Direction Review</h2>
+<p class="subtitle">Pick the shell direction that should drive the prototype. Both include shared SwiftUI views, model management, settings, and a macOS-only quick-ask panel.</p>
+
+<div class="cards">
+  <div class="card" data-choice="direction-a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Direction A: Workspace Split View</div>
+        <div class="mockup-body">
+          <div class="app-frame">
+            <div class="sidebar">
+              <div class="pill">Chats</div>
+              <div class="session-list">
+                <div class="session-item active">Research assistant</div>
+                <div class="session-item">Weekly planning</div>
+                <div class="session-item">Bug triage</div>
+                <div class="session-item">Temporary quick asks</div>
+              </div>
+            </div>
+            <div class="main-pane">
+              <div class="topbar">
+                <strong>Cross-platform Chat</strong>
+                <div class="mock-select">Model: Qwen 3 8B Instruct</div>
+              </div>
+              <div class="chat-area">
+                <div class="bubble user">Summarize the architectural trade-offs for on-device inference.</div>
+                <div class="bubble assistant">A mock response pipeline would stream placeholder tokens from a response service so the UI is wired for future APIs.</div>
+              </div>
+              <div class="composer">
+                <div class="mock-input-area">Ask anything, attach context, or switch models inline.</div>
+                <div class="composer-row">
+                  <div class="chip">Temporary chat</div>
+                  <div class="chip">Send</div>
+                </div>
+              </div>
+            </div>
+            <div class="right-rail">
+              <div class="pill">Model Info</div>
+              <div class="info-card">
+                <strong>Metadata</strong>
+                <div class="info-line"></div>
+                <div class="info-line" style="width: 84%;"></div>
+                <div class="info-line" style="width: 68%;"></div>
+              </div>
+              <div class="info-card">
+                <strong>Download State</strong>
+                <div class="info-line"></div>
+                <div class="info-line" style="width: 74%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Direction A: Workspace Split View</h3>
+      <p>Dense productivity shell. Chat history, active conversation, and model status all stay visible.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Best for power users managing many local models.</li>
+            <li>Chat, downloads, and metadata stay accessible without navigation.</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Feels heavier than ChatGPT.</li>
+            <li>The quick-ask overlay is less visually aligned with the main shell.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="direction-b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Direction B: Center-Stage Chat + Utility Screens</div>
+        <div class="mockup-body">
+          <div class="stack-frame">
+            <div class="topbar">
+              <div>
+                <div class="label">Shared Shell</div>
+                <strong>Chat First</strong>
+              </div>
+              <div class="mock-select">Default: DeepSeek R1 Distill</div>
+            </div>
+            <div class="hero-chat">
+              <div class="hero-card">
+                <div>
+                  <div class="label">Recent Chats</div>
+                  <div class="mini-history">
+                    <div class="chip">Reasoning benchmark notes</div>
+                    <div class="chip">Prompt rewrite</div>
+                    <div class="chip">Scratchpad temp chat</div>
+                  </div>
+                </div>
+                <div class="bubble assistant" style="max-width: 100%;">This layout keeps the main product emotionally similar to ChatGPT, then sends model management and settings into clean dedicated screens.</div>
+                <div class="composer">
+                  <div class="mock-input-area">Message a local model, switch inference target, or create a temporary thread.</div>
+                  <div class="composer-row">
+                    <div class="chip">Model Picker</div>
+                    <div class="chip">API-ready streaming mock</div>
+                    <div class="chip">Send</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-dock">
+              <div class="dock">
+                <div class="pill">Chat</div>
+                <div class="pill">Models</div>
+                <div class="pill">Settings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Direction B: Center-Stage Chat + Utility Screens</h3>
+      <p>Cleaner ChatGPT-like main experience. Model management and settings become explicit destinations instead of always-on rails.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Matches the quick-ask interaction model better.</li>
+            <li>Simpler cross-platform shell and easier to polish quickly.</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Model metadata is one tap away instead of always visible.</li>
+            <li>Less optimized for browsing many chats and models at the same time.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">macOS Quick Ask Overlay</div>
+    <div class="mockup-body">
+      <div class="quick-ask" data-choice="overlay" onclick="toggleSelect(this)">
+        <div class="quick-header">
+          <span class="overlay-pill">New Temporary Chat</span>
+          <span class="shortcut"><span class="keycap">⌥</span><span class="keycap">Space</span></span>
+        </div>
+        <div class="quick-input">Ask anything...
+          <br><br>
+          The panel floats over any app, uses the currently configured quick model, and does not append to a previous thread.
+        </div>
+        <div class="composer-row">
+          <div class="chip">Quick Model: Phi-4 Mini</div>
+          <div class="chip">Open full chat after send</div>
+          <div class="chip">Esc to dismiss</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,381 @@
+<style>
+  .shell {
+    min-height: 560px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: #202020;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 90px rgba(0,0,0,0.28);
+  }
+
+  .sidebar {
+    background: linear-gradient(180deg, #202020 0%, #1b1b1b 100%);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 18px 16px 16px;
+    color: #f3f4f6;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    gap: 14px;
+  }
+
+  .traffic {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+  }
+
+  .search {
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #9ca3af;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .menu-block,
+  .chat-list {
+    display: grid;
+    gap: 6px;
+  }
+
+  .menu-item,
+  .chat-item {
+    padding: 11px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #f3f4f6;
+  }
+
+  .menu-item {
+    color: #d1d5db;
+  }
+
+  .menu-item.active,
+  .chat-item.active {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .chat-item {
+    color: #e5e7eb;
+  }
+
+  .chat-item.muted {
+    color: #b9bec6;
+  }
+
+  .user-footer {
+    margin-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 12px;
+    color: #d1d5db;
+    font-size: 14px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 16px 18px 14px;
+    background: #212121;
+    color: #f9fafb;
+    gap: 18px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-pill,
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .header-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #f9fafb;
+  }
+
+  .message-stream {
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 24px;
+    align-content: start;
+  }
+
+  .section-label {
+    color: #9ca3af;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .assistant-block,
+  .user-block {
+    display: grid;
+    gap: 12px;
+  }
+
+  .assistant-copy {
+    line-height: 1.65;
+    color: #f3f4f6;
+    font-size: 15px;
+  }
+
+  .rule {
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+    margin: 4px 0 2px;
+  }
+
+  .composer {
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 22px;
+    background: #2a2a2a;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 16px 12px;
+    display: grid;
+    gap: 12px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  }
+
+  .composer-body {
+    min-height: 74px;
+    color: #aeb4bc;
+    font-size: 15px;
+  }
+
+  .composer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .left-tools,
+  .right-tools {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    background: rgba(255,255,255,0.06);
+    color: #e5e7eb;
+  }
+
+  .send {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,0.12);
+    color: white;
+  }
+
+  .quick-panel {
+    margin: 28px auto 0;
+    max-width: 700px;
+    border-radius: 28px;
+    background: rgba(35,35,35,0.86);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 35px 120px rgba(0,0,0,0.36);
+    padding: 20px;
+    color: #f9fafb;
+    display: grid;
+    gap: 14px;
+    backdrop-filter: blur(24px);
+  }
+
+  .quick-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shortcut {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .keycap {
+    border-radius: 10px;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+  }
+
+  .quick-input {
+    min-height: 88px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 18px;
+    color: #bfc5cd;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .layout-card {
+    border-radius: 22px;
+    padding: 18px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+</style>
+
+<h2>Chosen Shell Direction</h2>
+<p class="subtitle">Two-column ChatGPT-style layout using a navigation sidebar and a center-stage conversation view. This is the recommended base for the shared shell.</p>
+
+<div class="mockup">
+  <div class="mockup-header">Shared Chat Shell</div>
+  <div class="mockup-body">
+    <div class="shell">
+      <div class="sidebar">
+        <div class="traffic">
+          <div class="dot" style="background:#ff5f57;"></div>
+          <div class="dot" style="background:#febc2e;"></div>
+          <div class="dot" style="background:#28c840;"></div>
+        </div>
+        <div class="search">Search chats</div>
+        <div class="menu-block">
+          <div class="menu-item active">Chat</div>
+          <div class="menu-item">Models</div>
+          <div class="menu-item">Settings</div>
+        </div>
+        <div class="chat-list">
+          <div class="chat-item active">BatchNorm Forward Fix</div>
+          <div class="chat-item muted">Local LLM performance notes</div>
+          <div class="chat-item muted">Travel planner scratchpad</div>
+          <div class="chat-item muted">Temporary quick asks</div>
+          <div class="chat-item muted">OCR to Markdown</div>
+        </div>
+        <div class="user-footer">Chenluo Deng</div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <div class="header-left">
+            <div class="header-pill">Qwen 3 8B Instruct</div>
+            <div class="header-pill">Mock Response API Ready</div>
+          </div>
+          <div class="header-left">
+            <div class="chip">Share</div>
+            <div class="chip">Inspect Model</div>
+          </div>
+        </div>
+        <div class="message-stream">
+          <div class="assistant-block">
+            <div class="section-label">Assistant</div>
+            <div class="assistant-copy">
+              The shared shell keeps the interaction model simple: select a conversation on the left, keep the active thread in the main pane, and route model management or settings as dedicated destinations in the same navigation structure.
+            </div>
+            <div class="rule"></div>
+            <div class="assistant-copy">
+              For future backend work, the response pipeline should already expose draft, streaming, success, and failure states so the UI does not need to be redesigned when the real inference APIs arrive.
+            </div>
+          </div>
+        </div>
+        <div class="composer">
+          <div class="composer-body">Ask anything</div>
+          <div class="composer-meta">
+            <div class="left-tools">
+              <div class="chip">Attach</div>
+              <div class="chip">Web</div>
+              <div class="chip">Model</div>
+              <div class="chip">Auto</div>
+            </div>
+            <div class="right-tools">
+              <div class="chip">Mic</div>
+              <div class="send">↑</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">Model Management Destination</div>
+    <div class="mockup-body">
+      <div class="layout-card">
+        <div class="section-label">Inside the same two-column shell</div>
+        <p>Models becomes a dedicated destination selected from the left sidebar. The right side shows installed models, mock download progress, delete controls, and an info panel in a detail card or sheet.</p>
+        <div class="chip">Download</div>
+        <div class="chip">Delete</div>
+        <div class="chip">View Metadata</div>
+      </div>
+    </div>
+  </div>
+  <div class="mockup">
+    <div class="mockup-header">Settings Destination</div>
+    <div class="mockup-body">
+      <div class="layout-card">
+        <div class="section-label">Simple destination, not a modal</div>
+        <p>Settings sits beside Chat and Models in the same navigation system. It owns default model selection, quick-ask model choice, and future API endpoint preferences.</p>
+        <div class="chip">Default Chat Model</div>
+        <div class="chip">Quick Ask Model</div>
+        <div class="chip">Streaming Defaults</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mockup">
+  <div class="mockup-header">macOS Quick Ask Overlay</div>
+  <div class="mockup-body">
+    <div class="quick-panel">
+      <div class="quick-header">
+        <div class="header-pill">New Temporary Chat</div>
+        <div class="shortcut">
+          <div class="keycap">⌥</div>
+          <div class="keycap">Space</div>
+        </div>
+      </div>
+      <div class="quick-input">
+        Ask anything...
+        <br><br>
+        The global hotkey opens a Spotlight-style floating panel above any app. Sending creates a fresh temporary chat and can optionally hand off into the full app shell.
+      </div>
+      <div class="composer-meta">
+        <div class="left-tools">
+          <div class="chip">Quick Model: Phi-4 Mini</div>
+          <div class="chip">Esc to dismiss</div>
+        </div>
+        <div class="right-tools">
+          <div class="send">↑</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
