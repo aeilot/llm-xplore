@@ -14,6 +14,7 @@ struct LLM_XploreApp: App {
         let schema = Schema([
             ChatSession.self,
             LanguageModel.self,
+            AppPreferences.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

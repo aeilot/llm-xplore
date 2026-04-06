@@ -73,4 +73,27 @@ final class ChatSession {
         )
         updatedAt = timestamp
     }
+
+    func beginAssistantPlaceholder(at timestamp: Date = .now) {
+        messages.append(
+            ChatMessage(role: .assistant, content: "", timestamp: timestamp)
+        )
+        updatedAt = timestamp
+    }
+
+    func appendAssistantChunk(_ chunk: String, at timestamp: Date = .now) {
+        guard let index = messages.lastIndex(where: { $0.role == .assistant }) else {
+            beginAssistantPlaceholder(at: timestamp)
+            appendAssistantChunk(chunk, at: timestamp)
+            return
+        }
+
+        messages[index].content.append(chunk)
+        updatedAt = timestamp
+    }
+
+    func finalizeTitleIfNeeded(from prompt: String) {
+        guard title == "New Chat" else { return }
+        title = String(prompt.prefix(48)).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
