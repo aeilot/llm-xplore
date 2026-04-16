@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E305D04C2F907912006D3001 /* MLXEmbedders in Frameworks */ = {isa = PBXBuildFile; productRef = E305D04B2F907912006D3001 /* MLXEmbedders */; };
+		E305D04E2F907912006D3001 /* MLXHuggingFace in Frameworks */ = {isa = PBXBuildFile; productRef = E305D04D2F907912006D3001 /* MLXHuggingFace */; };
+		E305D0502F907912006D3001 /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = E305D04F2F907912006D3001 /* MLXLLM */; };
+		E305D0522F907912006D3001 /* MLXLMCommon in Frameworks */ = {isa = PBXBuildFile; productRef = E305D0512F907912006D3001 /* MLXLMCommon */; };
+		E305D0542F907912006D3001 /* MLXVLM in Frameworks */ = {isa = PBXBuildFile; productRef = E305D0532F907912006D3001 /* MLXVLM */; };
 		E35BDEEF2F84074100F67564 /* MLX in Frameworks */ = {isa = PBXBuildFile; productRef = E35BDEEE2F84074100F67564 /* MLX */; };
 		E35BDEF12F84074100F67564 /* MLXFFT in Frameworks */ = {isa = PBXBuildFile; productRef = E35BDEF02F84074100F67564 /* MLXFFT */; };
 		E35BDEF32F84074100F67564 /* MLXFast in Frameworks */ = {isa = PBXBuildFile; productRef = E35BDEF22F84074100F67564 /* MLXFast */; };
@@ -14,29 +19,18 @@
 		E35BDEF72F84074100F67564 /* MLXNN in Frameworks */ = {isa = PBXBuildFile; productRef = E35BDEF62F84074100F67564 /* MLXNN */; };
 		E35BDEF92F84074100F67564 /* MLXOptimizers in Frameworks */ = {isa = PBXBuildFile; productRef = E35BDEF82F84074100F67564 /* MLXOptimizers */; };
 		E35BDEFB2F84074100F67564 /* MLXRandom in Frameworks */ = {isa = PBXBuildFile; productRef = E35BDEFA2F84074100F67564 /* MLXRandom */; };
+		E3A31F312F8FBE8F00D18547 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = E3A31F302F8FBE8F00D18547 /* ExyteChat */; };
+		E3AADEB62F90B96B0058D9E1 /* MLXEmbeddersTokenizers in Frameworks */ = {isa = PBXBuildFile; productRef = E3AADEB52F90B96B0058D9E1 /* MLXEmbeddersTokenizers */; };
+		E3AADEB82F90B96B0058D9E1 /* MLXLMTokenizers in Frameworks */ = {isa = PBXBuildFile; productRef = E3AADEB72F90B96B0058D9E1 /* MLXLMTokenizers */; };
+		E3AADEBB2F90B9CE0058D9E1 /* MLXEmbeddersHFAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E3AADEBA2F90B9CE0058D9E1 /* MLXEmbeddersHFAPI */; };
+		E3AADEBD2F90B9CE0058D9E1 /* MLXLMHFAPI in Frameworks */ = {isa = PBXBuildFile; productRef = E3AADEBC2F90B9CE0058D9E1 /* MLXLMHFAPI */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A00000000000000000000004 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E3ED2F252F83D4CD0058D483 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E3ED2F2C2F83D4CD0058D483;
-			remoteInfo = "LLM Xplore";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		A00000000000000000000002 /* LLM XploreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LLM XploreTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3ED2F2D2F83D4CD0058D483 /* LLM Xplore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LLM Xplore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A00000000000000000000001 /* LLM XploreTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "LLM XploreTests";
-			sourceTree = "<group>";
-		};
 		E3ED2F2F2F83D4CD0058D483 /* LLM Xplore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "LLM Xplore";
@@ -45,23 +39,26 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A00000000000000000000008 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E3ED2F2A2F83D4CD0058D483 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E305D0542F907912006D3001 /* MLXVLM in Frameworks */,
+				E3AADEB82F90B96B0058D9E1 /* MLXLMTokenizers in Frameworks */,
+				E3A31F312F8FBE8F00D18547 /* ExyteChat in Frameworks */,
 				E35BDEF92F84074100F67564 /* MLXOptimizers in Frameworks */,
+				E305D04C2F907912006D3001 /* MLXEmbedders in Frameworks */,
+				E3AADEBB2F90B9CE0058D9E1 /* MLXEmbeddersHFAPI in Frameworks */,
 				E35BDEF32F84074100F67564 /* MLXFast in Frameworks */,
 				E35BDEF52F84074100F67564 /* MLXLinalg in Frameworks */,
+				E305D04E2F907912006D3001 /* MLXHuggingFace in Frameworks */,
 				E35BDEEF2F84074100F67564 /* MLX in Frameworks */,
 				E35BDEF72F84074100F67564 /* MLXNN in Frameworks */,
+				E3AADEBD2F90B9CE0058D9E1 /* MLXLMHFAPI in Frameworks */,
 				E35BDEF12F84074100F67564 /* MLXFFT in Frameworks */,
+				E305D0502F907912006D3001 /* MLXLLM in Frameworks */,
+				E305D0522F907912006D3001 /* MLXLMCommon in Frameworks */,
+				E3AADEB62F90B96B0058D9E1 /* MLXEmbeddersTokenizers in Frameworks */,
 				E35BDEFB2F84074100F67564 /* MLXRandom in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				E3ED2F2F2F83D4CD0058D483 /* LLM Xplore */,
-				A00000000000000000000001 /* LLM XploreTests */,
 				E3ED2F2E2F83D4CD0058D483 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				E3ED2F2D2F83D4CD0058D483 /* LLM Xplore.app */,
-				A00000000000000000000002 /* LLM XploreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,29 +85,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A00000000000000000000003 /* LLM XploreTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A00000000000000000000006 /* Build configuration list for PBXNativeTarget "LLM XploreTests" */;
-			buildPhases = (
-				A00000000000000000000007 /* Sources */,
-				A00000000000000000000008 /* Frameworks */,
-				A00000000000000000000009 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A00000000000000000000005 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A00000000000000000000001 /* LLM XploreTests */,
-			);
-			name = "LLM XploreTests";
-			packageProductDependencies = (
-			);
-			productName = "LLM XploreTests";
-			productReference = A00000000000000000000002 /* LLM XploreTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		E3ED2F2C2F83D4CD0058D483 /* LLM Xplore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3ED2F3A2F83D4CE0058D483 /* Build configuration list for PBXNativeTarget "LLM Xplore" */;
@@ -137,6 +109,16 @@
 				E35BDEF62F84074100F67564 /* MLXNN */,
 				E35BDEF82F84074100F67564 /* MLXOptimizers */,
 				E35BDEFA2F84074100F67564 /* MLXRandom */,
+				E3A31F302F8FBE8F00D18547 /* ExyteChat */,
+				E305D04B2F907912006D3001 /* MLXEmbedders */,
+				E305D04D2F907912006D3001 /* MLXHuggingFace */,
+				E305D04F2F907912006D3001 /* MLXLLM */,
+				E305D0512F907912006D3001 /* MLXLMCommon */,
+				E305D0532F907912006D3001 /* MLXVLM */,
+				E3AADEB52F90B96B0058D9E1 /* MLXEmbeddersTokenizers */,
+				E3AADEB72F90B96B0058D9E1 /* MLXLMTokenizers */,
+				E3AADEBA2F90B9CE0058D9E1 /* MLXEmbeddersHFAPI */,
+				E3AADEBC2F90B9CE0058D9E1 /* MLXLMHFAPI */,
 			);
 			productName = "LLM Xplore";
 			productReference = E3ED2F2D2F83D4CD0058D483 /* LLM Xplore.app */;
@@ -152,10 +134,6 @@
 				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2640;
 				TargetAttributes = {
-					A00000000000000000000003 = {
-						CreatedOnToolsVersion = 26.4;
-						TestTargetID = E3ED2F2C2F83D4CD0058D483;
-					};
 					E3ED2F2C2F83D4CD0058D483 = {
 						CreatedOnToolsVersion = 26.4;
 					};
@@ -172,6 +150,10 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E35BDEED2F84074100F67564 /* XCRemoteSwiftPackageReference "mlx-swift" */,
+				E3A31F2F2F8FBE8F00D18547 /* XCRemoteSwiftPackageReference "Chat" */,
+				E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */,
+				E3AADEB42F90B96B0058D9E1 /* XCRemoteSwiftPackageReference "swift-tokenizers-mlx" */,
+				E3AADEB92F90B9CE0058D9E1 /* XCRemoteSwiftPackageReference "swift-hf-api-mlx" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E3ED2F2E2F83D4CD0058D483 /* Products */;
@@ -179,19 +161,11 @@
 			projectRoot = "";
 			targets = (
 				E3ED2F2C2F83D4CD0058D483 /* LLM Xplore */,
-				A00000000000000000000003 /* LLM XploreTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A00000000000000000000009 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E3ED2F2B2F83D4CD0058D483 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,13 +176,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A00000000000000000000007 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E3ED2F292F83D4CD0058D483 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,56 +185,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A00000000000000000000005 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E3ED2F2C2F83D4CD0058D483 /* LLM Xplore */;
-			targetProxy = A00000000000000000000004 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		A00000000000000000000010 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N5R4643XP6;
-				ENABLE_TESTING_SEARCH_PATHS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "top.aeilot.LLM-XploreTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLM Xplore.app/Contents/MacOS/LLM Xplore";
-			};
-			name = Debug;
-		};
-		A00000000000000000000011 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N5R4643XP6;
-				ENABLE_TESTING_SEARCH_PATHS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "top.aeilot.LLM-XploreTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLM Xplore.app/Contents/MacOS/LLM Xplore";
-			};
-			name = Release;
-		};
 		E3ED2F382F83D4CE0058D483 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -397,6 +315,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -405,25 +324,26 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "top.aeilot.LLM-Xplore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				XROS_DEPLOYMENT_TARGET = 26.4;
 			};
 			name = Debug;
@@ -441,6 +361,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -449,25 +370,26 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "top.aeilot.LLM-Xplore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				XROS_DEPLOYMENT_TARGET = 26.4;
 			};
 			name = Release;
@@ -475,15 +397,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A00000000000000000000006 /* Build configuration list for PBXNativeTarget "LLM XploreTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A00000000000000000000010 /* Debug */,
-				A00000000000000000000011 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E3ED2F282F83D4CD0058D483 /* Build configuration list for PBXProject "LLM Xplore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -505,6 +418,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift-lm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.31.3;
+			};
+		};
 		E35BDEED2F84074100F67564 /* XCRemoteSwiftPackageReference "mlx-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ml-explore/mlx-swift";
@@ -513,9 +434,58 @@
 				minimumVersion = 0.31.3;
 			};
 		};
+		E3A31F2F2F8FBE8F00D18547 /* XCRemoteSwiftPackageReference "Chat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Chat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
+		E3AADEB42F90B96B0058D9E1 /* XCRemoteSwiftPackageReference "swift-tokenizers-mlx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DePasqualeOrg/swift-tokenizers-mlx";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+		E3AADEB92F90B9CE0058D9E1 /* XCRemoteSwiftPackageReference "swift-hf-api-mlx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DePasqualeOrg/swift-hf-api-mlx";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E305D04B2F907912006D3001 /* MLXEmbedders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXEmbedders;
+		};
+		E305D04D2F907912006D3001 /* MLXHuggingFace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXHuggingFace;
+		};
+		E305D04F2F907912006D3001 /* MLXLLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLLM;
+		};
+		E305D0512F907912006D3001 /* MLXLMCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLMCommon;
+		};
+		E305D0532F907912006D3001 /* MLXVLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E305D04A2F907912006D3001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXVLM;
+		};
 		E35BDEEE2F84074100F67564 /* MLX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E35BDEED2F84074100F67564 /* XCRemoteSwiftPackageReference "mlx-swift" */;
@@ -550,6 +520,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E35BDEED2F84074100F67564 /* XCRemoteSwiftPackageReference "mlx-swift" */;
 			productName = MLXRandom;
+		};
+		E3A31F302F8FBE8F00D18547 /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3A31F2F2F8FBE8F00D18547 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
+		};
+		E3AADEB52F90B96B0058D9E1 /* MLXEmbeddersTokenizers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3AADEB42F90B96B0058D9E1 /* XCRemoteSwiftPackageReference "swift-tokenizers-mlx" */;
+			productName = MLXEmbeddersTokenizers;
+		};
+		E3AADEB72F90B96B0058D9E1 /* MLXLMTokenizers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3AADEB42F90B96B0058D9E1 /* XCRemoteSwiftPackageReference "swift-tokenizers-mlx" */;
+			productName = MLXLMTokenizers;
+		};
+		E3AADEBA2F90B9CE0058D9E1 /* MLXEmbeddersHFAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3AADEB92F90B9CE0058D9E1 /* XCRemoteSwiftPackageReference "swift-hf-api-mlx" */;
+			productName = MLXEmbeddersHFAPI;
+		};
+		E3AADEBC2F90B9CE0058D9E1 /* MLXLMHFAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3AADEB92F90B9CE0058D9E1 /* XCRemoteSwiftPackageReference "swift-hf-api-mlx" */;
+			productName = MLXLMHFAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

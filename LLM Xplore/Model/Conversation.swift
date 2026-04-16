@@ -34,7 +34,7 @@ struct ChatMessage: Identifiable, Codable, Equatable {
 }
 
 @Model
-final class ChatSession {
+final class Conversation {
     @Attribute(.unique) var id: UUID
     var title: String
     var createdAt: Date
@@ -74,7 +74,7 @@ final class ChatSession {
         updatedAt = timestamp
     }
 
-    func beginAssistantPlaceholder(at timestamp: Date = .now) {
+    func beginAssistant(at timestamp: Date = .now) {
         messages.append(
             ChatMessage(role: .assistant, content: "", timestamp: timestamp)
         )
@@ -83,7 +83,7 @@ final class ChatSession {
 
     func appendAssistantChunk(_ chunk: String, at timestamp: Date = .now) {
         guard let index = messages.lastIndex(where: { $0.role == .assistant }) else {
-            beginAssistantPlaceholder(at: timestamp)
+            beginAssistant(at: timestamp)
             appendAssistantChunk(chunk, at: timestamp)
             return
         }
